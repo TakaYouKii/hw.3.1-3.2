@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,14 +17,28 @@ public class Main {
             } else if (m) {
                 col = col + sum;
                 s++;
-
             }
-
         }
-        double i = col / s;
-        System.out.println(i);
-        System.out.println(i -numbers[0] - numbers[1]);
+
+        double id = col / s;
+        System.out.println(id);
 
 
+
+
+        int[] numberss = new int[]{5, -7, 734, -66, 55, 5, 4, -22};
+        boolean sort = false;
+        while (!sort){
+            sort = true;
+            for (int i = 1; i< numberss.length; i++) {
+                if (numberss[i] < numberss[i - 1]) {
+                    int w = numberss[i];
+                    numberss[i] = numberss[i - 1];
+                    numberss[i - 1] = w;
+                    sort = false;
+                }
+            }
+            System.out.println(Arrays.toString(numberss));
+        }
     }
 }
